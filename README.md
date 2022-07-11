@@ -1,0 +1,2 @@
+# MinecraftModsAutoupdate
+A small script to automatically download the last version of a list of minecraft mods in CurseForge. It can be used to auto update the mods you use without needing to open the CurseForge page for each mod but mods are not downloaded directly in .minecraft so after the script you can choose to not include any mod in case the last realease is not the one your looking for. It needs a CurseForge API Key wich can be get by signing up in the CurseForge developers page.
