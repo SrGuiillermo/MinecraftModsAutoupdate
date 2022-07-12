@@ -12,7 +12,7 @@ if __name__ == '__main__':
     except FileNotFoundError:
         confg = {
             'api_key' : '',
-            'client' : [],
+            'mods_ids' : [],
         }
 
         with open('confg.json', 'w') as f:
@@ -22,8 +22,14 @@ if __name__ == '__main__':
         input()
         exit()
 
-
-    mod_input = input('List of mods to download (Name of the list of mods in json confg file): ')
+    if len(list(confg.keys())) > 2:
+        list_of_mods = list(confg.keys())
+        del list_of_mods[0]
+        
+        print(f'More than one list of mods detected: {list_of_mods}')
+        mod_input = input('Enter the list you want to download: ')
+    else:
+        mod_input = list(confg.keys())[-1]
 
     headers = {
         'Accept': 'application/json',
